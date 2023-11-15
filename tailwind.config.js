@@ -1,11 +1,14 @@
 /** @type {import('tailwindcss').Config} */
+
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 module.exports = {
   content: ["./*.{html,js}"],
   theme: {
     screens: {
-      sm: "480px",
+      sm: "375px",
       md: "768px",
-      lg: "976px",
+      lg: "1024px",
       xl: "1440px",
     },
     extend: {
@@ -18,7 +21,14 @@ module.exports = {
         veryDarkBlue: "hsl(233, 12%, 13%)",
         veryPaleRed: "hsl(13, 100%, 96%)",
         veryLightGrey: "hsl(0, 0%, 98%)",
-        
+      },
+      fontFamily: {
+        'sans': ['"Be Vietnam Pro"', ...defaultTheme.fontFamily.sans],
+      },
+      backgroundImage: {
+        'tablet-pattern': "url('../img/bg-tablet-pattern.svg')",
+        'simplify-desktop': "url('../img/bg-simplify-section-desktop.svg')",
+        'simplify-mobile': "url('../img/bg-simplify-section-mobile.svg')",
       }
     },
   },
